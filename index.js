@@ -5,7 +5,7 @@ document.querySelectorAll('nav a').forEach(anchor => {
         const targetId = this.getAttribute('href');
         
         // Check if we're on index.html
-        if (window.location.pathname === '/' || window.location.pathname === '/index.html') {
+        if (window.location.pathname === '/' || window.location.pathname === 'index.html') {
             const targetSection = document.querySelector(targetId);
             if (targetSection) {
                 targetSection.scrollIntoView({ behavior: 'smooth' });
@@ -100,6 +100,14 @@ if (servicesLink) {
 }
 
 // Work page navigation
+const workLink = document.querySelector('a[href="#portfolio"]');
+if (workLink) {
+    workLink.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.location.href = 'work.html';
+    });
+}
+
 // Filter functionality for work page
 const filterButtons = document.querySelectorAll('.filter-btn');
 const workItems = document.querySelectorAll('.work-item');
